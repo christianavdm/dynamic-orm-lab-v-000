@@ -53,8 +53,14 @@ class InteractiveRecord
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{table_name_for_insert}")[0][0]
   end
   
-  def self.find_by(property: value)
-    binding.pry
+  def self.find_by(arg)
+    sql = <<-SQL
+      SELECT * FROM #{self.table_name}
+      WHERE ? = ?
+      VALUES (?, ?)
+    SQL
+    
+    DB[:conn].execute(sql, "property.to_s", "value")
 
   end
 
