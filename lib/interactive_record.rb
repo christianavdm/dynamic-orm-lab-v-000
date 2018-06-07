@@ -54,8 +54,8 @@ class InteractiveRecord
   end
   
   def self.find_by(property_hash)
-    property = arg.keys[0].to_s
-    value = arg.values[0]
+    property = property_hash.keys[0].to_s
+    value = property_hash.values[0]
     
     sql = <<-SQL
       SELECT * FROM #{self.table_name}
