@@ -54,16 +54,16 @@ class InteractiveRecord
   end
   
   def self.find_by(property_hash)
-    binding.pry
     property = arg.keys[0].to_s
     value = arg.values[0]
+    
     sql = <<-SQL
       SELECT * FROM #{self.table_name}
       WHERE ? = ?
       VALUES (?, ?)
     SQL
     
-    DB[:conn].execute(sql, "property.to_s", "value")
+    DB[:conn].execute(sql, property, value)
 
   end
 
