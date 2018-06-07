@@ -55,12 +55,7 @@ class InteractiveRecord
   
   def self.find_by(property: value)
     binding.pry
-    sql = <<-SQL
-      SELECT * FROM #{self.table_name}
-      WHERE ? = ?
-      VALUES (?, ?)
-    SQL
-    DB[:conn].execute(sql, "property.to_s", "value")
+
   end
 
 end
