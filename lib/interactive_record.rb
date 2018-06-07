@@ -58,7 +58,7 @@ class InteractiveRecord
       WHERE ? = ?
       VALUES (?, ?)
     SQL
-    DB[:conn].execute(sql, property.to_s, value)
+    DB[:conn].execute(sql, "property.to_s", "value")
   end
 
 end
