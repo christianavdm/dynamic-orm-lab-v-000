@@ -62,8 +62,6 @@ class InteractiveRecord
       WHERE #{property} = '#{value}'
     SQL
     
-  
-    
     DB[:conn].execute(sql)
   end
 end
