@@ -62,8 +62,6 @@ class InteractiveRecord
       WHERE ? = '?'
     SQL
     
-    binding.pry
-    
     DB[:conn].execute(sql, property, value)
   end
 end
