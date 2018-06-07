@@ -62,7 +62,7 @@ class InteractiveRecord
       WHERE #{property} = '#{value}'
     SQL
     
-    binding.pry
+  
     
     DB[:conn].execute(sql)
   end
