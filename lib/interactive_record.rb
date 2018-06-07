@@ -55,7 +55,7 @@ class InteractiveRecord
   
   def self.find_by(property: value)
     binding.pry
-    sql = <<-SQL
+   # sql = <<-SQL
   #    SELECT * FROM #{self.table_name}
  #     WHERE ? = ?
   #    VALUES (?, ?)
